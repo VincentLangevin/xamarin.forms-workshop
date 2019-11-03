@@ -13,15 +13,13 @@ namespace MonkeyFinder.View
 			BindingContext = new MonkeysViewModel();
 		}
 
-		async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+		private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
 		{
-			var monkey = e.SelectedItem as Monkey;
-			if (monkey == null)
-				return;
+			if (!( e.SelectedItem is Monkey monkey )) return;
 
 			await Navigation.PushAsync(new DetailsPage(monkey));
 
-			((ListView)sender).SelectedItem = null;
+			((ListView) sender).SelectedItem = null;
 		}
 	}
 }

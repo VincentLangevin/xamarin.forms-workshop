@@ -25,7 +25,7 @@
 			<ColumnDefinition Width="*" />
 			<ColumnDefinition Width="*" />
 		</Grid.ColumnDefinitions>
-		<ListView Grid.ColumnSpan="2" ItemsSource="{Binding Monkeys}" HasUnevenRows="True">
+		<ListView Grid.ColumnSpan="2" ItemsSource="{Binding Monkeys}" ItemSelected="ListView_ItemSelected" HasUnevenRows="True">
 			<ListView.ItemTemplate>
 				<DataTemplate x:DataType="model:Monkey">
 					<ViewCell>
