@@ -41,3 +41,21 @@ Visual Studio has a simulator which will tunnel to your MAC device to build the 
 ### MVVVM Helpers 
 
 [MVVM Helpers](https://github.com/jamesmontemagno/mvvm-helpers) includes a ObservableRangeCollection to allow adding, removing, and replacing a range of items to which will raise a single colleciton changed notification. Ideal if you are dealing with thousands of items to bind to for the UI.
+
+### Xamarin Essentials
+
+Micorosft created an abstraction layer to access all the common hardware features and native platform features across all platforms (ie GPS, SMS, File Storage, etc).  Xamarin Essentials is optimized so that at compile time the linker will only include the API/Libraries that are actually used by your code so you have a slim run-time as a result.
+
+[Xamarin Essentials Documentation](https://docs.microsoft.com/en-us/xamarin/essentials/)
+
+### Data Template Selectors
+
+For a control that can display a heterogenus collection (different models like a monkey, dog, or cat) and each one has their own view, you can create a DataTemplateSelector to help the UI display the correct view for the data type.
+
+### Xamarin Components
+
+[Xamarin Components](https://github.com/xamarin/XamarinComponents) 
+
+### AppCenter
+
+Handles Cross Cutting concerns in a single API.  For example, accessing data from AzureCosmosDB takes two lines of code, is strongly typed, and the API handles the authentication required.

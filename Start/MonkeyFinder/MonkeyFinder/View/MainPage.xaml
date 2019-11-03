@@ -25,7 +25,9 @@
 			<ColumnDefinition Width="*" />
 			<ColumnDefinition Width="*" />
 		</Grid.ColumnDefinitions>
-		<ListView Grid.ColumnSpan="2" ItemsSource="{Binding Monkeys}" ItemSelected="ListView_ItemSelected" HasUnevenRows="True">
+		<!-- Pull to Refresh is built into certain Xamarin controls like ListView or CollectionView, you need to specify 3 properties IsPullToRefreshEnabled, RefreshCommand, and IsRefreshing -->
+		<!-- For controls that don't support Pull to Refresh out of the box you can wrap the collection control in a Refresh View -->
+		<ListView Grid.ColumnSpan="2" ItemsSource="{Binding Monkeys}" ItemSelected="ListView_ItemSelected" HasUnevenRows="True" IsPullToRefreshEnabled="True" RefreshCommand="{Binding GetMonkeysCommand}" IsRefreshing="{Binding IsBusy, Mode=OneWay}">
 			<ListView.ItemTemplate>
 				<DataTemplate x:DataType="model:Monkey">
 					<ViewCell>
@@ -48,9 +50,10 @@
 
 		</ListView>
 
-		<Button Grid.Row="1" Text="Get Monkeys" Command="{Binding GetMonkeysCommand}" Margin="8" Style="{StaticResource ButtonOutline}" IsEnabled="{Binding IsNotBusy}"/>
+		<Button Grid.Row="1" Grid.Column="0" Text="Get Monkeys" Command="{Binding GetMonkeysCommand}" Margin="8" Style="{StaticResource ButtonOutline}" IsEnabled="{Binding IsNotBusy}"/>
+		<Button Grid.Row="1" Grid.Column="1" Text="Find Closest" Command="{Binding FindMonkeyClosestToCurrentLocationCommand}" Margin="8" Style="{StaticResource ButtonOutline}" IsEnabled="{Binding IsNotBusy}" />
 
-		<ActivityIndicator Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" />
+		<ActivityIndicator Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" />
 
 	</Grid>
 	
