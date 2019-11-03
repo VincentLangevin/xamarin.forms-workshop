@@ -16,6 +16,13 @@
                 <Setter Property="HeightRequest" Value="40"/>
                 <Setter Property="CornerRadius" Value="20"/>
                 <Setter Property="Visual" Value="Material"/>
+                <Style.Triggers>
+                    <Trigger TargetType="Button" Property="IsEnabled" Value="False" >
+                        <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                        <Setter Property="TextColor" Value="DarkGray" />
+                        <Setter Property="BorderColor" Value="DarkGray" />
+                    </Trigger>
+                </Style.Triggers>
             </Style>
         </ResourceDictionary>     
     </Application.Resources>

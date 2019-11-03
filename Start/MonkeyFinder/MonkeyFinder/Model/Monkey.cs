@@ -39,6 +39,18 @@ namespace MonkeyFinder.Model
 	{
 		public static Monkey[] FromJson(string json) 
 			=> JsonConvert.DeserializeObject<Monkey[]>(json, MonkeyFinder.Model.Converter.Settings);
+
+		public static Monkey GenerateGoofyMonkey()
+			=> new Monkey()
+			{
+				Name = "Kaylee Jensen",
+				Details = "Kaylee Jensen is an energetic lovable monkey that loves other animals and snuggles!",
+				Image = "",
+				Population = 1,
+				Location = "Moose Jaw",
+				Latitude = 50.3916,
+				Longitude = -105.5349
+			};
 	}
 
 	public static class Serialize

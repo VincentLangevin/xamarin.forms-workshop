@@ -14,16 +14,30 @@ If you are new to mobile development, we recommend deploying to a physical Andro
 Beyond that you will be good to go for the workshop! If you have some spare time we have prepared a full Xamarin 101 series to cover the basics of mobile development with .NET.
 
 I have also put together an abstract of what you can expect for the day long workshop:
-•	30 Min Session - Introduction to Xamarin Session & Setup Help
-•	Single Page List of Data
-•	MVVM & Data Binding
-•	Navigation
-•	Platform Specific Optimizations
-•	Application Resources
-•	30 Min Session - Introduction to App Center
-•	Integrating Data Services
-•	Adding Azure Functions for Data
-•	User Specific Data
-•	Analytics, Crash reporting, and more
 
-If you have any questions please email me at motz@microsoft.com or reach out to me on Twitter @JamesMontemagno. 
+    - 30 Min Session - Introduction to Xamarin Session & Setup Help
+    - Single Page List of Data
+    - MVVM & Data Binding
+    - Navigation
+    - Platform Specific Optimizations
+    - Application Resources
+    - 30 Min Session - Introduction to App Center
+    - Integrating Data Services
+    - Adding Azure Functions for Data
+    - User Specific Data
+    - Analytics, Crash reporting, and more
+
+If you have any questions please email me at [motz@microsoft.com](mailto:motz@microsoft.com) or reach out to me on Twitter @JamesMontemagno. 
+
+### iOS Debugging
+
+In order to build and debug an iOS device you need a MAC:
+
+    1. A physical MAC on your network (using the same subnet) OR
+    2. A provisioned MAC machine in the cloud [macincloud](http://www.macincloud.com). 
+
+Visual Studio has a simulator which will tunnel to your MAC device to build the app and then run the emulator, Visual Studio does a screen share using the TLS tunnel to communicate quickly.
+
+### MVVVM Helpers 
+
+[MVVM Helpers](https://github.com/jamesmontemagno/mvvm-helpers) includes a ObservableRangeCollection to allow adding, removing, and replacing a range of items to which will raise a single colleciton changed notification. Ideal if you are dealing with thousands of items to bind to for the UI.
