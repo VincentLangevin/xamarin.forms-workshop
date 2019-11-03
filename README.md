@@ -58,4 +58,4 @@ For a control that can display a heterogenus collection (different models like a
 
 ### AppCenter
 
-Handles Cross Cutting concerns in a single API.  For example, accessing data from AzureCosmosDB takes two lines of code, is strongly typed, and the API handles the authentication required.
+Handles Cross Cutting concerns in a single API.  For example, accessing data from AzureCosmosDB takes two lines of code, is strongly typed, and the API handles the authentication required, offline caching/synchronizing, etc.
